@@ -10,6 +10,10 @@
 
 
 
-MP=4
+MP=1
 TARGET_FOLDER=LLaMA
-torchrun --nproc_per_node $MP example.py --ckpt_dir $TARGET_FOLDER/30B --tokenizer_path $TARGET_FOLDER/tokenizer.model
+torchrun --nproc_per_node $MP \
+    example.py \
+    --ckpt_dir $TARGET_FOLDER/7B \
+    --tokenizer_path $TARGET_FOLDER/tokenizer.model \
+    --temperature 0
